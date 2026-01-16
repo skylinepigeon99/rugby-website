@@ -1,0 +1,20 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom styles can go here if needed to override Tailwind */
+.text-brand-dark {
+    color: #0f172a;
+}
+
+.bg-brand-dark {
+    background-color: #0f172a;
+}
+
+.bg-brand-DEFAULT {
+    background-color: #0ea5e9;
+}
+
+.text-brand-DEFAULT {
+    color: #0ea5e9;
+}
