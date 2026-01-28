@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK Tag Rugby | Sports for All Ages</title>
+    <title>Hong Kong Tag Rugby | Sports for All Ages</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -55,10 +55,10 @@
     <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 md:px-10 py-4 bg-white sticky top-0 z-50 shadow-sm">
         <div class="flex items-center gap-8">
             <div class="flex items-center gap-3 text-primary">
-                <div class="size-10 flex items-center justify-center bg-primary/10 rounded-xl">
-                    <span class="material-symbols-outlined text-3xl">sports_rugby</span>
+                <div class="flex items-center justify-center">
+                    <img src="static/image/hktagrugbylogo.png" alt="Hong Kong Tag Rugby Logo" class="h-10 w-auto">
                 </div>
-                <h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight">HK Tag Rugby</h2>
+                <h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight">Hong Kong Tag Rugby</h2>
             </div>
             <nav class="hidden lg:flex items-center gap-8 ml-4">
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#home">Home</a>
@@ -90,35 +90,160 @@
     </div>
 
     <main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">
-
-    <!-- Hero Section -->
-    <section id="home" class="mb-12">
-        <div class="relative group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
-            <div class="w-full bg-center bg-no-repeat aspect-[16/9] md:aspect-video bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("DSC03914.jpg");'>
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl">
-                    <div class="flex items-center gap-2">
-                        <span class="bg-accent text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Season 2024</span>
-                        <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Join the Community</span>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Hero Section -->
+        <section id="home" class="lg:col-span-8">
+            <div class="flex flex-col gap-6">
+                <div class="relative group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
+                    <button
+                        class="absolute left-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+                        <span class="material-symbols-outlined !text-3xl">chevron_left</span>
+                    </button>
+                    <button
+                        class="absolute right-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+                        <span class="material-symbols-outlined !text-3xl">chevron_right</span>
+                    </button>
+                    <div class="w-full bg-center bg-no-repeat aspect-[16/9] md:aspect-video bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("./static/image/hero.jpg");'>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-accent text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Season 2026</span>
+                                <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Join the Community</span>
+                            </div>
+                            <h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
+                                GET YOUR TAG ON!
+                            </h1>
+                            <p class="text-slate-200 text-lg font-medium leading-relaxed opacity-90">
+                                Fun, Fitness & Friends! Join Hong Kong's premier tag rugby community. A competition for everyone—from 5 to 60+ years old!
+                            </p>
+                            <button class="flex min-w-[160px] max-w-fit cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-primary text-base font-black hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1">
+                                <span>Find Your Team</span>
+                            </button>
+                        </div>
                     </div>
-                    <h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
-                        GET YOUR TAG ON!
-                    </h1>
-                    <p class="text-slate-200 text-lg font-medium leading-relaxed opacity-90">
-                        Fun, Fitness & Friends! Join Hong Kong's premier tag rugby community. A competition for everyone—from 5 to 60+ years old!
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-primary text-base font-black hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1">
-                            <a href="#programs">Find Your Team</a>
-                        </button>
-                        <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-black hover:bg-primary/90 transition-all shadow-xl hover:-translate-y-1 border border-white/20">
-                            <a href="#contact">Register Now</a>
-                        </button>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <div class="w-8 h-2 rounded-full bg-primary transition-all"></div>
+                    <div
+                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
+                    </div>
+                    <div
+                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
+                    </div>
+                    <div
+                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
+                    </div>
+                    <div
+                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+    <!-- Latest News Section -->
+    <section class="lg:col-span-4 flex flex-col gap-6">
+            <div class="flex items-center justify-between px-2">
+                <h2 class="text-slate-900 text-2xl font-black tracking-tight">Latest News</h2>
+                <button
+                    class="size-10 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined text-xl">sync</span>
+                </button>
+            </div>
+            <div
+                class="bg-white rounded-[2rem] border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+                <div
+                    class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer border-b border-slate-50">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-primary/10 flex items-center justify-center rounded-xl size-20 shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-3xl">flag</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">Asia Cup @ Osaka Japan</p>
+                            <p
+                                class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                <span class="size-1.5 rounded-full bg-accent"></span> 11-12 April 2026
+                            </p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 text-slate-300">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer border-b border-slate-50">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-primary/10 flex items-center justify-center rounded-xl size-20 shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-3xl">sports_rugby</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">2nd Trial for Asia Cup @ Wong Chuk Hang Recreation Ground</p>
+                            <p
+                                class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                <span class="size-1.5 rounded-full bg-accent"></span> 25 January 2026
+                            </p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 text-slate-300">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer border-b border-slate-50">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-primary/10 flex items-center justify-center rounded-xl size-20 shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-3xl">sports_rugby</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">1st Trial for Asia Cup @ Wong Chuk Hang Recreation Ground</p>
+                            <p
+                                class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                <span class="size-1.5 rounded-full bg-accent"></span> 17 January 2026
+                            </p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 text-slate-300">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-primary/10 flex items-center justify-center rounded-xl size-20 shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-3xl">event</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">Charity Event @ King's Park Sports Ground</p>
+                            <p
+                                class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                <span class="size-1.5 rounded-full bg-accent"></span> 15 October 2025
+                            </p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 text-slate-300">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="mt-4 p-8 bg-slate-900 rounded-[2rem] text-white relative overflow-hidden group">
+                <div
+                    class="absolute -right-12 -top-12 size-40 bg-primary/20 rounded-full blur-3xl transition-all group-hover:scale-150">
+                </div>
+                <h4 class="text-white font-black text-2xl mb-2 relative z-10">Join the Scrum</h4>
+                <p class="text-slate-400 text-sm mb-6 relative z-10 font-medium">Get the best tactical analysis
+                    and news delivered to your inbox every week.</p>
+                <div class="flex flex-col gap-3 relative z-10">
+                    <input
+                        class="bg-white/10 border-white/20 rounded-xl text-white text-sm w-full py-3 focus:ring-primary focus:border-primary placeholder:text-slate-500"
+                        placeholder="Your email address" type="email" />
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-white py-3 rounded-xl font-black transition-all flex items-center justify-center gap-2">
+                        <span>Join Now</span>
+                        <span class="material-symbols-outlined text-base">send</span>
+                    </button>
+                </div>
+            </div> -->
     </section>
+    </div>
 
     <!-- Gallery Section -->
     <section class="py-12">
@@ -135,25 +260,25 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
-                <img src="DSC03914.jpg" alt="Action Shot 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="./static/image/inaction1.jpg" alt="Action Shot 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <p class="text-white font-bold text-sm">Junior Development</p>
                 </div>
             </div>
             <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
-                <img src="DSC05930.jpg" alt="Action Shot 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="./static/image/inaction2.jpg" alt="Action Shot 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <p class="text-white font-bold text-sm">Mixed League</p>
                 </div>
             </div>
             <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
-                <img src="DSC07275.jpg" alt="Action Shot 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="./static/image/inaction3.jpg" alt="Action Shot 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <p class="text-white font-bold text-sm">Pro Coaching</p>
                 </div>
             </div>
             <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
-                <img src="DSC09708.jpg" alt="Action Shot 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="./static/image/inaction4.jpg" alt="Action Shot 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <p class="text-white font-bold text-sm">Community Spirit</p>
                 </div>
@@ -206,7 +331,7 @@
             <div class="relative z-10 max-w-4xl mx-auto">
                 <div class="flex flex-col items-center text-center mb-12">
                     <span class="bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-4">Our Purpose</span>
-                    <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6">About HK Tag Rugby</h2>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6">About Hong Kong Tag Rugby</h2>
                     <p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed">
                         At HKTRL, our mission is to nurture tag rugby from the grassroots up, working hand-in-hand with local clubs, schools, and international partners like the International Tag Federation (ITF).
                     </p>
@@ -395,9 +520,9 @@
             <div class="flex flex-col gap-6 max-w-sm">
                 <div class="flex items-center gap-3 text-primary">
                     <div class="size-10 flex items-center justify-center bg-primary/10 rounded-xl">
-                        <span class="material-symbols-outlined text-3xl">sports_rugby</span>
+                        <img src="static/image/hktagrugbylogo.png" alt="Hong Kong Tag Rugby Logo" class="h-10 w-auto">
                     </div>
-                    <h2 class="text-slate-900 text-2xl font-black tracking-tight">HK Tag Rugby</h2>
+                    <h2 class="text-slate-900 text-2xl font-black tracking-tight">Hong Kong Tag Rugby</h2>
                 </div>
                 <p class="text-slate-500 font-medium leading-relaxed">
                     Hong Kong's premier tag rugby community. Fun, fitness, and friends for all ages and skill levels.
@@ -434,7 +559,7 @@
         </div>
         <div class="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-border-light text-center">
             <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">
-                &copy; 2026 HK Tag Rugby. All rights reserved.
+                &copy; 2026 Hong Kong Tag Rugby. All rights reserved.
             </p>
         </div>
     </footer>
