@@ -3,186 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hong Kong Tag Rugby - Sports for All Ages</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <title>HK Tag Rugby | Sports for All Ages</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
+            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
+                        "primary": "#0ea5e9",
+                        "accent": "#f43f5e",
+                        "background-light": "#ffffff",
+                        "surface-light": "#f8fafc",
+                        "border-light": "#e2e8f0",
                         brand: {
                             light: '#38bdf8',
                             DEFAULT: '#0ea5e9',
                             dark: '#0f172a',
                         }
-                    }
-                }
-            }
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
         }
     </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Lexend', sans-serif;
+                @apply bg-background-light text-slate-900;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
-<body class="font-sans text-gray-800 antialiased bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="flex-shrink-0 flex items-center">
-                        <img src="PosterMaker_22112025_004435.png" alt="Hong Kong Tag Rugby logo" class="h-10 w-auto mr-3">
-                        <span class="font-bold text-2xl text-brand-dark">Hong Kong Tag Rugby</span>
-                    </a>
+<body class="min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+    <!-- Header -->
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 md:px-10 py-4 bg-white sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3 text-primary">
+                <div class="size-10 flex items-center justify-center bg-primary/10 rounded-xl">
+                    <span class="material-symbols-outlined text-3xl">sports_rugby</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-brand-DEFAULT transition">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-brand-DEFAULT transition">About</a>
-                    <a href="#programs" class="text-gray-600 hover:text-brand-DEFAULT transition">Programs</a>
-                    <a href="#contact" class="bg-brand-DEFAULT text-white px-4 py-2 rounded-md hover:bg-brand-dark transition">Join Now</a>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+                <h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight">HK Tag Rugby</h2>
+            </div>
+            <nav class="hidden lg:flex items-center gap-8 ml-4">
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#home">Home</a>
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#about">About</a>
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#programs">Programs</a>
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="flex flex-1 justify-end gap-4 md:gap-6 items-center">
+            <button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-full h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                <a href="#contact">Join Now</a>
+            </button>
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-slate-600">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
-            <a href="#programs" class="block py-2 px-4 text-sm hover:bg-gray-200">Programs</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Join Now</a>
-        </div>
-    </nav>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-20 px-6">
+        <nav class="flex flex-col gap-6">
+            <a class="text-slate-900 text-lg font-bold" href="#home">Home</a>
+            <a class="text-slate-900 text-lg font-bold" href="#about">About</a>
+            <a class="text-slate-900 text-lg font-bold" href="#programs">Programs</a>
+            <a class="text-slate-900 text-lg font-bold" href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">
 
     <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-gradient-to-r from-brand-light to-brand-DEFAULT">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center md:space-x-10">
-                <div class="text-center md:text-left md:w-1/2">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+    <section id="home" class="mb-12">
+        <div class="relative group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
+            <div class="w-full bg-center bg-no-repeat aspect-[16/9] md:aspect-video bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("DSC03914.jpg");'>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-accent text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Season 2024</span>
+                        <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Join the Community</span>
+                    </div>
+                    <h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
                         GET YOUR TAG ON!
                     </h1>
-                    <p class="text-xl md:text-2xl text-white opacity-90 mb-10 max-w-3xl">
+                    <p class="text-slate-200 text-lg font-medium leading-relaxed opacity-90">
                         Fun, Fitness & Friends! Join Hong Kong's premier tag rugby community. A competition for everyone—from 5 to 60+ years old!
                     </p>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="#programs" class="bg-white text-brand-dark px-8 py-3 rounded-full font-bold text-lg hover:shadow-lg transition transform hover:-translate-y-1">
-                            Find Your Team
-                        </a>
-                        <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-brand-dark transition transform hover:-translate-y-1">
-                            Register Now
-                        </a>
-                    </div>
-                </div>
-                <div class="mt-10 md:mt-0 md:w-1/2">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                        <img src="DSC03914.jpg" alt="Tag rugby players in action" class="w-full h-full object-cover">
+                    <div class="flex flex-wrap gap-4">
+                        <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-primary text-base font-black hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1">
+                            <a href="#programs">Find Your Team</a>
+                        </button>
+                        <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-black hover:bg-primary/90 transition-all shadow-xl hover:-translate-y-1 border border-white/20">
+                            <a href="#contact">Register Now</a>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-8 text-center">
-                <h2 class="text-3xl font-bold text-white sm:text-4xl">Tag Rugby In Action</h2>
-                <p class="mt-4 text-lg text-gray-300">Real moments from our Hong Kong Tag Rugby community.</p>
+    <!-- Gallery Section -->
+    <section class="py-12">
+        <div class="flex items-center justify-between mb-8 px-2">
+            <h2 class="text-slate-900 text-3xl font-black tracking-tight">Tag Rugby In Action</h2>
+            <div class="flex gap-2">
+                <button class="size-10 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined text-xl">chevron_left</span>
+                </button>
+                <button class="size-10 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined text-xl">chevron_right</span>
+                </button>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="rounded-2xl overflow-hidden shadow-lg">
-                    <img src="DSC03914.jpg" alt="Junior tag rugby players running with the ball" class="w-full h-56 object-cover">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
+                <img src="DSC03914.jpg" alt="Action Shot 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white font-bold text-sm">Junior Development</p>
                 </div>
-                <div class="rounded-2xl overflow-hidden shadow-lg">
-                    <img src="DSC05930.jpg" alt="Tag rugby game with mixed players" class="w-full h-56 object-cover">
+            </div>
+            <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
+                <img src="DSC05930.jpg" alt="Action Shot 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white font-bold text-sm">Mixed League</p>
                 </div>
-                <div class="rounded-2xl overflow-hidden shadow-lg">
-                    <img src="DSC07275.jpg" alt="Tag rugby player making a tag" class="w-full h-56 object-cover">
+            </div>
+            <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
+                <img src="DSC07275.jpg" alt="Action Shot 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white font-bold text-sm">Pro Coaching</p>
                 </div>
-                <div class="rounded-2xl overflow-hidden shadow-lg">
-                    <img src="DSC09708.jpg" alt="Team photo of tag rugby players" class="w-full h-56 object-cover">
+            </div>
+            <div class="group relative overflow-hidden rounded-[1.5rem] shadow-lg aspect-square">
+                <img src="DSC09708.jpg" alt="Action Shot 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white font-bold text-sm">Community Spirit</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">3 Big Benefits of Playing Tag</h2>
-                <p class="mt-4 text-lg text-gray-600">Why thousands are joining the Tag family.</p>
+    <!-- Features Section (3 Big Benefits) -->
+    <section class="py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-slate-900 text-3xl font-black tracking-tight">3 Big Benefits of Playing Tag</h2>
+            <p class="text-slate-500 mt-2 font-medium">Why thousands are joining the Tag family</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col gap-4 rounded-[2rem] bg-surface-light p-8 border border-border-light hover:shadow-xl transition-all hover:-translate-y-2 group">
+                <div class="size-14 flex items-center justify-center bg-white rounded-2xl shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-3xl">mood</span>
+                </div>
+                <h3 class="text-slate-900 text-xl font-bold">It's Fun!</h3>
+                <p class="text-slate-600 leading-relaxed font-medium">
+                    Music, friends, and a great atmosphere. We are dedicated to making sure you have a FUN time every week.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-gray-50 rounded-lg text-center hover:shadow-md transition">
-                    <div class="text-brand-DEFAULT mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">It's Fun!</h3>
-                    <p class="text-gray-600">Music, friends, and a great atmosphere. We are dedicated to making sure you have a FUN time every week.</p>
+            <div class="flex flex-col gap-4 rounded-[2rem] bg-surface-light p-8 border border-border-light hover:shadow-xl transition-all hover:-translate-y-2 group">
+                <div class="size-14 flex items-center justify-center bg-white rounded-2xl shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-3xl">bolt</span>
                 </div>
-                <div class="p-6 bg-gray-50 rounded-lg text-center hover:shadow-md transition">
-                    <div class="text-brand-DEFAULT mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Get Fit!</h3>
-                    <p class="text-gray-600">Chase a tag or sprint for a try. Work it into your current workout or use it to build your base fitness level.</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-lg text-center hover:shadow-md transition">
-                    <div class="text-brand-DEFAULT mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">It's Safe!</h3>
-                    <p class="text-gray-600">Strict "No Tackling" rules. The aim is to grab a tag, not the player. Safety is our #1 priority.</p>
-                </div>
+                <h3 class="text-slate-900 text-xl font-bold">Get Fit!</h3>
+                <p class="text-slate-600 leading-relaxed font-medium">
+                    Chase a tag or sprint for a try. Work it into your current workout or use it to build your base fitness level.
+                </p>
             </div>
+            <div class="flex flex-col gap-4 rounded-[2rem] bg-surface-light p-8 border border-border-light hover:shadow-xl transition-all hover:-translate-y-2 group">
+                <div class="size-14 flex items-center justify-center bg-white rounded-2xl shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-3xl">verified_user</span>
+                </div>
+                <h3 class="text-slate-900 text-xl font-bold">It's Safe!</h3>
+                <p class="text-slate-600 leading-relaxed font-medium">
+                    Strict "No Tackling" rules. The aim is to grab a tag, not the player. Safety is our #1 priority.
+                </p>
+            </div>
+        </div>
+    </section>
 
-            <div id="about" class="text-center mt-20 mb-8 scroll-mt-20">
-                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">About Us</h2>
-            </div>
-
-            <!-- Mission Statement -->
-            <div class="mt-16 bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
-                <div class="max-w-3xl mx-auto">
-                    <p class="text-lg text-gray-700 mb-6">
-                        At HKTRL, our mission is to nurture tag rugby from the grassroots up, working hand-in-hand with local clubs, schools, and international partners like the International Tag Federation (ITF). Through coaching, referee training, player development, and school programs, we aim to:
+    <!-- About Us Section (Mission) -->
+    <section id="about" class="py-12 scroll-mt-20">
+        <div class="rounded-[2rem] bg-slate-900 p-8 md:p-16 text-white overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/10 blur-[100px] -rotate-12"></div>
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <div class="flex flex-col items-center text-center mb-12">
+                    <span class="bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-4">Our Purpose</span>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6">About HK Tag Rugby</h2>
+                    <p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed">
+                        At HKTRL, our mission is to nurture tag rugby from the grassroots up, working hand-in-hand with local clubs, schools, and international partners like the International Tag Federation (ITF).
                     </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start">
-                            <span class="text-brand-DEFAULT mr-3 text-xl">•</span>
-                            <span class="text-gray-700">Create inclusive opportunities for people to enjoy rugby in a non-contact format.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-DEFAULT mr-3 text-xl">•</span>
-                            <span class="text-gray-700">Support young players in developing their skills and confidence.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-DEFAULT mr-3 text-xl">•</span>
-                            <span class="text-gray-700">Provide pathways for fitness, friendship, and lifelong participation in rugby.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-DEFAULT mr-3 text-xl">•</span>
-                            <span class="text-gray-700">Strengthen ties with rugby communities so tag rugby complements and enriches the wider rugby family.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-DEFAULT mr-3 text-xl">•</span>
-                            <span class="text-gray-700">Develop the women’s game, ensuring female athletes have equal opportunities to grow, compete, and shine.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-DEFAULT mr-3 text-xl">•</span>
-                            <span class="text-gray-700">Empower and include domestic helpers, supporting them through tag rugby and working toward the creation of the first Filipina National Women’s Tag Rugby Team. Our goal is to proudly feature them on international tours.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-brand-DEFAULT mr-3 text-xl">•</span>
-                            <span class="text-gray-700">Support grassroots programs to give athletes another sporting option, helping them expand their skills across different disciplines while building confidence and community.</span>
-                        </li>
-                    </ul>
-                    <p class="text-lg text-gray-700 font-medium text-center italic">
-                        By building strong partnerships and fostering a spirit of teamwork, we ensure tag rugby is not just a sport, but a community where everyone belongs, develops, and is recognised.
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-accent">check_circle</span>
+                        <p class="text-slate-300 font-medium">Create inclusive opportunities for people to enjoy rugby in a non-contact format.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-accent">check_circle</span>
+                        <p class="text-slate-300 font-medium">Support young players in developing their skills and confidence.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-accent">check_circle</span>
+                        <p class="text-slate-300 font-medium">Provide pathways for fitness, friendship, and lifelong participation in rugby.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-accent">check_circle</span>
+                        <p class="text-slate-300 font-medium">Strengthen ties with rugby communities so tag rugby complements and enriches the wider rugby family.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-accent">check_circle</span>
+                        <p class="text-slate-300 font-medium">Develop the women’s game, ensuring female athletes have equal opportunities to grow, compete, and shine.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-accent">check_circle</span>
+                        <p class="text-slate-300 font-medium">Empower and include domestic helpers, supporting them through tag rugby and working toward the creation of the first Filipina National Women’s Tag Rugby Team.</p>
+                    </div>
+                    <div class="flex gap-4 md:col-span-2">
+                        <span class="material-symbols-outlined text-accent">check_circle</span>
+                        <p class="text-slate-300 font-medium">Support grassroots programs to give athletes another sporting option, helping them expand their skills across different disciplines while building confidence and community.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-white/10 text-center">
+                    <p class="text-xl font-bold italic text-white/90">
+                        "By building strong partnerships and fostering a spirit of teamwork, we ensure tag rugby is not just a sport, but a community where everyone belongs, develops, and is recognised."
                     </p>
                 </div>
             </div>
@@ -190,108 +253,212 @@
     </section>
 
     <!-- Programs Section -->
-    <section id="programs" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Divisions for Everyone</h2>
-                <p class="mt-4 text-lg text-gray-600">From juniors to seniors, beginners to pros.</p>
-            </div>
-            
-            <div class="space-y-12">
-                <!-- Juniors -->
-                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="md:w-1/3 bg-blue-100 flex items-center justify-center p-8">
-                        <span class="text-6xl">🧸</span>
+    <section id="programs" class="py-12 scroll-mt-20">
+        <div class="text-center mb-12">
+            <h2 class="text-slate-900 text-3xl font-black tracking-tight">Divisions for Everyone</h2>
+            <p class="text-slate-500 mt-2 font-medium">From juniors to seniors, beginners to pros</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Juniors -->
+            <div class="flex flex-col overflow-hidden rounded-[2rem] bg-white border border-border-light shadow-sm hover:shadow-xl transition-all group">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="DSC03914.jpg" alt="Juniors" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">Ages 5-16</span>
                     </div>
-                    <div class="p-8 md:w-2/3">
-                        <div class="uppercase tracking-wide text-sm text-brand-DEFAULT font-semibold">Juniors (Ages 5-16)</div>
-                        <h3 class="block mt-1 text-2xl leading-tight font-bold text-black">Fun, Friends & Confidence</h3>
-                        <p class="mt-2 text-gray-600">Children learn teamwork, develop confidence, and self-esteem. Our goal is a fun environment where kids love to play!</p>
-                        <div class="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400">
-                            <p class="font-bold text-yellow-700">Attention Parents!</p>
-                            <p class="text-sm text-yellow-600">Enjoy the comfort of knowing your child is playing a safe sport with NO TACKLING. It's the perfect introduction to team sports.</p>
+                </div>
+                <div class="p-8 flex flex-col gap-4">
+                    <div class="flex items-center gap-3 text-primary">
+                        <span class="material-symbols-outlined">child_care</span>
+                        <h3 class="text-slate-900 text-2xl font-black">Juniors</h3>
+                    </div>
+                    <p class="text-slate-600 font-medium leading-relaxed">
+                        Children learn teamwork, develop confidence, and self-esteem. A fun environment where kids love to play!
+                    </p>
+                    <div class="mt-2 p-4 bg-accent/5 rounded-2xl border border-accent/10">
+                        <p class="text-accent text-xs font-bold uppercase tracking-wider mb-1">Parent's Note</p>
+                        <p class="text-slate-700 text-sm font-medium italic">"Safe sport with NO TACKLING. Perfect intro to team sports."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seniors -->
+            <div class="flex flex-col overflow-hidden rounded-[2rem] bg-white border border-border-light shadow-sm hover:shadow-xl transition-all group">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="DSC07275.jpg" alt="Seniors" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">Men's & Women's</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col gap-4">
+                    <div class="flex items-center gap-3 text-primary">
+                        <span class="material-symbols-outlined">groups</span>
+                        <h3 class="text-slate-900 text-2xl font-black">Seniors</h3>
+                    </div>
+                    <p class="text-slate-600 font-medium leading-relaxed">
+                        <strong>Men's:</strong> Competitive or social—join as an individual or a team.<br>
+                        <strong>Women's:</strong> A fun way to keep fit and meet new people outside the gym.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mixed -->
+            <div class="flex flex-col overflow-hidden rounded-[2rem] bg-white border border-border-light shadow-sm hover:shadow-xl transition-all group">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="DSC05930.jpg" alt="Mixed" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">Co-ed League</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col gap-4">
+                    <div class="flex items-center gap-3 text-primary">
+                        <span class="material-symbols-outlined">diversity_3</span>
+                        <h3 class="text-slate-900 text-2xl font-black">Mixed Seniors</h3>
+                    </div>
+                    <p class="text-slate-600 font-medium leading-relaxed">
+                        Play with family, friends, or workmates. Whether it's corporate socializing or competitive groups, we have a spot for you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 scroll-mt-20">
+        <div class="rounded-[2rem] bg-surface-light border border-border-light p-8 md:p-16 overflow-hidden relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">Get Started</span>
+                        <h2 class="text-slate-900 text-4xl md:text-5xl font-black tracking-tight leading-tight">Ready to Play?</h2>
+                        <p class="text-slate-600 text-lg font-medium leading-relaxed max-w-md">
+                            Sign up for a free trial session or contact us for more information. Join the fastest growing sports community in HK!
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="size-12 flex items-center justify-center bg-white rounded-xl shadow-sm text-primary">
+                                <span class="material-symbols-outlined">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 text-xs font-bold uppercase tracking-wider">Email Us</p>
+                                <p class="text-slate-900 font-bold">hello@hktagrugby.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="size-12 flex items-center justify-center bg-white rounded-xl shadow-sm text-primary">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 text-xs font-bold uppercase tracking-wider">Location</p>
+                                <p class="text-slate-900 font-bold">Various Pitches, Hong Kong</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Mens & Womens -->
-                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="md:w-1/3 bg-green-100 flex items-center justify-center p-8">
-                        <span class="text-6xl">🏃</span>
-                    </div>
-                    <div class="p-8 md:w-2/3">
-                        <div class="uppercase tracking-wide text-sm text-brand-DEFAULT font-semibold">Mens & Womens Seniors</div>
-                        <h3 class="block mt-1 text-2xl leading-tight font-bold text-black">Social or Competitive</h3>
-                        <p class="mt-2 text-gray-600">
-                            <strong>Mens:</strong> Have a laugh or be competitive. Join as an individual or a full team.<br>
-                            <strong>Womens:</strong> A fun way to keep fit without the gym! Meet new people and try a new ball sport.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Mixed -->
-                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="md:w-1/3 bg-purple-100 flex items-center justify-center p-8">
-                        <span class="text-6xl">🤝</span>
-                    </div>
-                    <div class="p-8 md:w-2/3">
-                        <div class="uppercase tracking-wide text-sm text-brand-DEFAULT font-semibold">Mixed Seniors</div>
-                        <h3 class="block mt-1 text-2xl leading-tight font-bold text-black">Family, Friends & Workmates</h3>
-                        <p class="mt-2 text-gray-600">Play with family and friends in our mixed divisions. Whether it's a corporate team looking to socialize or a group of friends wanting to compete, we have a spot for you.</p>
-                    </div>
+                <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-xl shadow-slate-200/50 border border-border-light">
+                    <form class="flex flex-col gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-slate-900 text-sm font-bold" for="name">Full Name</label>
+                            <input class="h-14 px-4 rounded-xl border border-border-light bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" id="name" type="text" placeholder="John Doe">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-slate-900 text-sm font-bold" for="email">Email Address</label>
+                            <input class="h-14 px-4 rounded-xl border border-border-light bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" id="email" type="email" placeholder="john@example.com">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-slate-900 text-sm font-bold" for="age-group">Interested Division</label>
+                            <select class="h-14 px-4 rounded-xl border border-border-light bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none appearance-none" id="age-group">
+                                <option>Juniors (5-16)</option>
+                                <option>Men's Seniors</option>
+                                <option>Women's Seniors</option>
+                                <option>Mixed Seniors</option>
+                            </select>
+                        </div>
+                        <button class="h-14 bg-primary text-white rounded-xl font-black text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all mt-2" type="button">
+                            Send Inquiry
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action / Contact -->
-    <section id="contact" class="py-16 bg-brand-dark text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to Play?</h2>
-            <p class="text-xl mb-8">Sign up for a free trial session or contact us for more information.</p>
-            
-            <form class="bg-white text-gray-800 rounded-lg p-8 shadow-lg max-w-lg mx-auto text-left">
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your Name">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your Email">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="age-group">Interested Division</label>
-                    <select class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age-group">
-                        <option>Juniors (5-16)</option>
-                        <option>Mens Seniors</option>
-                        <option>Womens Seniors</option>
-                        <option>Mixed Seniors</option>
-                    </select>
-                </div>
-                <div class="flex items-center justify-between">
-                    <button class="bg-brand-DEFAULT hover:bg-brand-light text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition" type="button">
-                        Send Inquiry
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                <span class="font-bold text-xl">Hong Kong Tag Rugby</span>
-                <p class="text-sm text-gray-400">© 2026 Hong Kong Tag Rugby. All rights reserved.</p>
+    <footer class="border-t border-solid border-border-light bg-white px-4 md:px-10 py-10">
+        <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between gap-10">
+            <div class="flex flex-col gap-6 max-w-sm">
+                <div class="flex items-center gap-3 text-primary">
+                    <div class="size-10 flex items-center justify-center bg-primary/10 rounded-xl">
+                        <span class="material-symbols-outlined text-3xl">sports_rugby</span>
+                    </div>
+                    <h2 class="text-slate-900 text-2xl font-black tracking-tight">HK Tag Rugby</h2>
+                </div>
+                <p class="text-slate-500 font-medium leading-relaxed">
+                    Hong Kong's premier tag rugby community. Fun, fitness, and friends for all ages and skill levels.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="size-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary hover:text-white transition-all">
+                        <span class="material-symbols-outlined text-xl">facebook</span>
+                    </a>
+                    <a href="#" class="size-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary hover:text-white transition-all">
+                        <span class="material-symbols-outlined text-xl">photo_camera</span>
+                    </a>
+                </div>
             </div>
-            <div class="flex space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
-                <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
-                <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-10 md:gap-20">
+                <div class="flex flex-col gap-4">
+                    <p class="text-slate-900 font-bold uppercase tracking-widest text-[10px]">Quick Links</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="#home" class="text-slate-500 text-sm font-semibold hover:text-primary transition-colors">Home</a>
+                        <a href="#about" class="text-slate-500 text-sm font-semibold hover:text-primary transition-colors">About Us</a>
+                        <a href="#programs" class="text-slate-500 text-sm font-semibold hover:text-primary transition-colors">Programs</a>
+                        <a href="#contact" class="text-slate-500 text-sm font-semibold hover:text-primary transition-colors">Join Now</a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="text-slate-900 font-bold uppercase tracking-widest text-[10px]">Support</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="#" class="text-slate-500 text-sm font-semibold hover:text-primary transition-colors">FAQ</a>
+                        <a href="#" class="text-slate-500 text-sm font-semibold hover:text-primary transition-colors">Rules</a>
+                        <a href="#" class="text-slate-500 text-sm font-semibold hover:text-primary transition-colors">Privacy</a>
+                    </nav>
+                </div>
             </div>
+        </div>
+        <div class="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-border-light text-center">
+            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">
+                &copy; 2026 HK Tag Rugby. All rights reserved.
+            </p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    </div> <!-- End layout-container -->
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('span');
+            icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('span').textContent = 'menu';
+            });
+        });
+    </script>
 </body>
 </html>

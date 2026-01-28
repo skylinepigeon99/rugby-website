@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RugbyPro | Modern Rugby Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3b82f6",
+                        "accent": "#f43f5e",
+                        "background-light": "#ffffff",
+                        "surface-light": "#f8fafc",
+                        "border-light": "#e2e8f0",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Lexend', sans-serif;
+                @apply bg-background-light text-slate-900;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 md:px-10 py-4 bg-white sticky top-0 z-50 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-10 flex items-center justify-center bg-primary/10 rounded-xl">
+<span class="material-symbols-outlined text-3xl">sports_rugby</span>
+</div>
+<h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight">RugbyPro</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-8 ml-4">
+<a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#">Leagues</a>
+<a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#">Teams</a>
+<a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#">Stats</a>
+<a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#">Fixtures</a>
+<a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#">News</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-6 items-center">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full overflow-hidden bg-slate-100 border border-slate-200">
+<div class="text-slate-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-sm font-normal px-4 pl-2" placeholder="Search events..." value=""/>
+</div>
+</label>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-full h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+<span>Subscribe</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-100 ring-2 ring-primary/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB13ZavjtsC67TYxQSkrnNHe0hmekxrKPX4zrhwYujy-vOQnUPXyF7XO57ZHS_LLG0OqzpdFP6HjI-woF5FtknPytMfwCdMvSYkuTu7a5PtyganyMPq3QdIlosjOnUMRBKalyFmd05vA1lNMfacb4dok5akHb61oosdHx4wFUwyvFFHwRMwlXHqwdrChWGK2BUybrDsI9xKJbk0XmVTGIAGqd3UYqoUOlfGLCcBDwUrjjJwasEuXrquMd3XbFiufF6jNbRAbWizS5zp");'></div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<div class="lg:col-span-8 flex flex-col gap-10">
+<div class="flex flex-col gap-6">
+<div class="relative group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
+<button class="absolute left-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined !text-3xl">chevron_left</span>
+</button>
+<button class="absolute right-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined !text-3xl">chevron_right</span>
+</button>
+<div class="w-full bg-center bg-no-repeat aspect-[16/9] md:aspect-video bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXm9Buc1myqHeiuBI_wXxVK1GD8HIgjarvK9JVWrWO5t0evqhT7qZn4K-LcMQwv7Uko2M6mM22UvLULC3mlqRqBI3sGgvFM5pa2c03eR-fjw1vh3yfyd_cprV2ylQu31_1dQ1vmBNioob9aSjpAJ4ZBNgM1hSkqKd5o8ElmO9sl1Kn5lghZpOA8fLQbAs1L4wxgr43AbetK15czU82iTZ95754TRyKRlGzDGVWsZxxYOMNrirNLQ4tMqCg2G4iV_ExnIMZw3TYorzs");'>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="bg-accent text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Local Highlight</span>
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Gallery 1/5</span>
+</div>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
+                                        Springboks Announce Squad for Autumn Internationals
+                                    </h1>
+<p class="text-slate-200 text-lg font-medium leading-relaxed opacity-90">
+                                        Erasmus makes bold selections as the world champions prepare for their northern hemisphere tour.
+                                    </p>
+<button class="flex min-w-[160px] max-w-fit cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-primary text-base font-black hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1">
+<span>Read Full Story</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center gap-3">
+<div class="w-8 h-2 rounded-full bg-primary transition-all"></div>
+<div class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all"></div>
+<div class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all"></div>
+<div class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all"></div>
+<div class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group bg-surface-light rounded-[1.5rem] p-5 flex flex-col gap-4 border border-slate-100 hover:border-primary/20 hover:shadow-xl transition-all cursor-pointer">
+<div class="h-48 w-full bg-cover bg-center rounded-2xl overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNg3Ia5pkomX6i4RWJc0BHPXuNKGzSi4LviYHeoCIfckTm3TFe_GXQVyy72wjWTG9u54rAF4FRCe0f2ZafFbqKOzlAHvEMCLfxdk5T2K1wo8i39oqz8k0w__uxl8hrRBkTY0FQ6W4fqwF2WJ3tNvMfUzYy-ZZvZ6AEk0bAWcAIJDChVPLY1OjBmBLzBaFU70ErYh-Q1yzzi9PA2emuFRye5Sqi5idlW44Eeb6e7TKgRc2iQiKwZ0QcKo9_LL71H17100Z0qLVmJHo-');">
+<div class="w-full h-full bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors"></div>
+</div>
+<h3 class="text-slate-900 font-bold text-xl leading-snug group-hover:text-primary transition-colors">World Cup Expansion: What the 24-team format means for emerging nations</h3>
+<p class="text-slate-500 text-sm leading-relaxed line-clamp-2">The governing body confirms plans for a wider tournament field starting in 2027...</p>
+</div>
+<div class="group bg-surface-light rounded-[1.5rem] p-5 flex flex-col gap-4 border border-slate-100 hover:border-primary/20 hover:shadow-xl transition-all cursor-pointer">
+<div class="h-48 w-full bg-cover bg-center rounded-2xl overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9Lf8P580cKeZQc5jjr20kQ3PHaqzt-YWEBjC3F4xC9r_HtpR81wsC4plTjLJRnpuUp88BO0qO5y-wjUzrId-VdMf2YZ5jVvB6wmn5IFLsVslxK9ecM8a4E-ljtvy1YHzpmRstOebeHhJmO8RCmsx3QJkpjymiwKRa1i1gXNTngV97jvZlETTh6In-pE1fBPNXyLUjfHdDppzCIZCGJmHnJhmYPU1L5hybhm4rUAqY7e8Vi1yoCqDtb_QH7BP5hkOieZngQwO2FBr6');">
+<div class="w-full h-full bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors"></div>
+</div>
+<h3 class="text-slate-900 font-bold text-xl leading-snug group-hover:text-primary transition-colors">New Discipline Rules: Referees to take stricter stance on high-tackles</h3>
+<p class="text-slate-500 text-sm leading-relaxed line-clamp-2">A new set of directives aims to improve player safety through more consistent officiating...</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="flex items-center justify-between px-2">
+<h2 class="text-slate-900 text-2xl font-black tracking-tight">Latest News</h2>
+<button class="size-10 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-xl">sync</span>
+</button>
+</div>
+<div class="bg-white rounded-[2rem] border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+<div class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer border-b border-slate-50">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-20 shrink-0 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfJSVZarsY7-WyYu_wsYv_DtCy1Vp5BIr_wtVbuGF1U02QFbswG4h7WobgSU6vAyOWaBDUZaJnNfhCqEkzpbZVfFFe5RpoPPJLL9_SBHeEikC8dr10sTvXy0MuIvEo1snWcNgl0zrK7VC4vkXccBR9l_5-MfkFELN6vCV2756lc024VeN0_ZKC1mgTrKyOCtVeKedSsLydlv3Qll7IUf7hjz29uzdtYvyi68kOsWQ_T_gjeOKaz6ao8ktrlYsOfVlYC9CEvrWH5onf");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">Six Nations ticket sales break all previous records</p>
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-accent"></span> 12m ago
+                                    </p>
+</div>
+</div>
+<div class="shrink-0 text-slate-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer border-b border-slate-50">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-20 shrink-0 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0CQ9c3SLc2OnPzMd_ZnydNxZCQHVKDK4NdJSJRRQLZh4_QQ-sqNallZJeAOcZz0kt-1QgErPstU84zMnaaAY6zSDEMxqxIh4TklWUtn561ux9ozbKCr-n7Yb-YN2boIL26uAzGUUBE6MT610j_MagNKh9_lpMB0IiBvw6lfVgMNboYsEdM1EuRf_snQerapoHRdNz93P3gsbZY6kcYkiZ32cFuH98itjFOCVZdtfB-nnNMwunn_Bdfh0QUl5CY28IP1Mo6ytX1tGY");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">Injury Blow: Dupont to miss upcoming club fixture</p>
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-accent"></span> 45m ago
+                                    </p>
+</div>
+</div>
+<div class="shrink-0 text-slate-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer border-b border-slate-50">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-20 shrink-0 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMOmDz87magI159MpuBNxzTI1REVlCpgVc0o5s04nu558BBRtIhQB9Up5lpxBk_ntuVE7Y2mwq9pvi-LTqSfcKQGLffoLp9l-6aLoP366S_MXovSzJW3V3SAPGhnBQNREjoNzd2C6BWfBk62DmpgZRXJuW5gn7rv1cRm7wULI2IDlEAVl7_ui70RjBVLjv0U2E16dQZ2iRp7QOf1hcnlhxVsg-Bcaez2Fflt6JYtCUhlixtLwKuo4t2pWX1Y-C6fJhzazi16lBV3cf");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">Transfer Update: Barrett confirms move to Japan</p>
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-slate-400"></span> 2h ago
+                                    </p>
+</div>
+</div>
+<div class="shrink-0 text-slate-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer border-b border-slate-50">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-20 shrink-0 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAk0fNEQXWd0JlVbtgfCFQRb7WdqHnRYLeTzcCumMIhsBbLKpSk-whThwBjaya5x0jG4f6UJ8bPLwmenKi2SFJNfxTxdCoXbD3rpbDmwg9TyGdmnFInWmR0ZDSEfU_rKg2YF0aFG7T5weaP9-2LO372dC0ziQ_eRMvETErk_5NOirdbPQHQc5KyrXPGTJCEYd6jVAUkwtkckOR-qkWq4L33Ve2V7-r2f4J6Cl1B-fs5GSfA8Kna8fV6Yw6LcDmUjbh6XRi3kPIR27_D");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">Under-20 Championship venues officially announced</p>
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-slate-400"></span> 5h ago
+                                    </p>
+</div>
+</div>
+<div class="shrink-0 text-slate-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-5 min-h-[100px] py-5 justify-between hover:bg-slate-50 transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-20 shrink-0 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGL_lMOwlxKE6lIoqqeiip_b3W_AI1Qn9Z8bFzMWxUDFZlNuy-ONg9ViD5YCI1CO6CWVxxSYbsEzEl4PPeJvDeArNmMqYrWh-GFqfZbv77qHfYytAvrKASCz6MYac6fzhvozTbR2lxvAMZsvwDdPO6pyoyLBCBVQ-VltTIFmNtO1mt6PSXtamb8Xp_hbJuTXIVX8rCHfObznq3kd7D2k7ePV7M5T_Qks3g42pKtubjmjWmijHZTbQfVaI4ho30S9pjaQsU-vZZSLkG");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 text-sm font-bold leading-tight line-clamp-2 mb-1">Pitch Technology: New hybrid turf installed at Twickenham</p>
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-slate-400"></span> 8h ago
+                                    </p>
+</div>
+</div>
+<div class="shrink-0 text-slate-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="mt-4 p-8 bg-slate-900 rounded-[2rem] text-white relative overflow-hidden group">
+<div class="absolute -right-12 -top-12 size-40 bg-primary/20 rounded-full blur-3xl transition-all group-hover:scale-150"></div>
+<h4 class="text-white font-black text-2xl mb-2 relative z-10">Join the Scrum</h4>
+<p class="text-slate-400 text-sm mb-6 relative z-10 font-medium">Get the best tactical analysis and news delivered to your inbox every week.</p>
+<div class="flex flex-col gap-3 relative z-10">
+<input class="bg-white/10 border-white/20 rounded-xl text-white text-sm w-full py-3 focus:ring-primary focus:border-primary placeholder:text-slate-500" placeholder="Your email address" type="email"/>
+<button class="bg-primary hover:bg-primary/90 text-white py-3 rounded-xl font-black transition-all flex items-center justify-center gap-2">
+<span>Join Now</span>
+<span class="material-symbols-outlined text-base">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-slate-100 py-16 mt-16 bg-white">
+<div class="max-w-[1280px] mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">sports_rugby</span>
+<span class="font-black text-xl tracking-tight text-slate-900">RugbyPro</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 text-slate-500 text-sm font-semibold">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Advertise</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<p class="text-slate-400 text-sm">© 2024 RugbyPro. Built for the Fans.</p>
+</div>
+</footer>
+</div>
+
+</body></html>
