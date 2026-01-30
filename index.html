@@ -90,20 +90,19 @@
     </div>
 
     <main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:items-stretch">
         <!-- Hero Section -->
-        <section id="home" class="lg:col-span-8">
-            <div class="flex flex-col gap-6">
-                <div class="relative group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
-                    <button
+        <section id="home" class="lg:col-span-8 h-full">
+            <div class="relative flex flex-col group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200 h-full min-h-[500px] md:min-h-[600px]">
+                    <button id="hero-prev"
                         class="absolute left-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
                         <span class="material-symbols-outlined !text-3xl">chevron_left</span>
                     </button>
-                    <button
+                    <button id="hero-next"
                         class="absolute right-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
                         <span class="material-symbols-outlined !text-3xl">chevron_right</span>
                     </button>
-                    <div class="w-full bg-center bg-no-repeat aspect-[16/9] md:aspect-video bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("./static/image/hero.jpg");'>
+                    <div id="event-hero" class="flex-1 bg-center bg-no-repeat bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("static/image/hero.jpg");'>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl">
                             <div class="flex items-center gap-2">
@@ -116,28 +115,10 @@
                             <p class="text-slate-200 text-lg font-medium leading-relaxed opacity-90">
                                 Fun, Fitness & Friends! Join Hong Kong's premier tag rugby community. A competition for everyone—from 5 to 60+ years old!
                             </p>
-                            <button class="flex min-w-[160px] max-w-fit cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-primary text-base font-black hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1">
-                                <span>Find Your Team</span>
-                            </button>
                         </div>
                     </div>
+                    <div id="hero-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-3"></div>
                 </div>
-                <div class="flex items-center justify-center gap-3">
-                    <div class="w-8 h-2 rounded-full bg-primary transition-all"></div>
-                    <div
-                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
-                    </div>
-                    <div
-                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
-                    </div>
-                    <div
-                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
-                    </div>
-                    <div
-                        class="size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all">
-                    </div>
-                </div>
-            </div>
         </section>
 
     <!-- Latest News Section -->
@@ -580,6 +561,53 @@
                 mobileMenuBtn.querySelector('span').textContent = 'menu';
             });
         });
+
+        // Hero Carousel
+        const heroImages = [
+            'static/image/hero.jpg',
+            'static/image/OsakaAsiaCup_1.jpeg',
+            'static/image/OsakaAsiaCup_2.jpeg',
+            'static/image/OsakaAsiaCup_3.jpeg',
+            'static/image/OsakaAsiaCup_4.jpeg',
+            'static/image/OsakaAsiaCup_5.jpeg',
+        ];
+        const heroEl = document.getElementById('event-hero');
+        const prevBtn = document.getElementById('hero-prev');
+        const nextBtn = document.getElementById('hero-next');
+        const dotsContainer = document.getElementById('hero-dots');
+        let heroIndex = 0;
+
+        function renderHero() {
+            heroEl.style.backgroundImage = `url("${heroImages[heroIndex]}")`;
+            const dots = dotsContainer.querySelectorAll('div');
+            dots.forEach((dot, i) => {
+                dot.className = i === heroIndex
+                    ? 'w-8 h-2 rounded-full bg-primary transition-all'
+                    : 'size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all';
+            });
+        }
+
+        function initDots() {
+            dotsContainer.innerHTML = '';
+            heroImages.forEach((_, i) => {
+                const d = document.createElement('div');
+                d.addEventListener('click', () => { heroIndex = i; renderHero(); });
+                dotsContainer.appendChild(d);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            heroIndex = (heroIndex - 1 + heroImages.length) % heroImages.length;
+            renderHero();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            heroIndex = (heroIndex + 1) % heroImages.length;
+            renderHero();
+        });
+
+        initDots();
+        renderHero();
     </script>
 </body>
 </html>

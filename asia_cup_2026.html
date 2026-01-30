@@ -90,35 +90,31 @@
     </div>
 
     <main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">
-        <!-- Event Hero -->
-        <section class="mb-12">
-            <div class="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
-                <div class="w-full bg-center bg-no-repeat aspect-[21/9] bg-cover" style='background-image: url("static/image/hero.jpg");'>
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-3xl">
-                        <div class="flex items-center gap-2">
-                            <span class="bg-accent text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Confirmed</span>
-                            <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">International Tournament</span>
-                        </div>
-                        <h1 class="text-white text-3xl md:text-5xl font-black leading-[1.1] tracking-tight">
-                            Tag Football Asia Cup 2026
-                        </h1>
-                        <p class="text-slate-200 text-lg font-medium leading-relaxed opacity-90">
-                            J-GREEN Sakai (Sakai City, Osaka, Japan) <br>
-                            Saturday 11 April & Sunday 12 April 2026
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:items-start">
+            <!-- Main Content Area -->
             <div class="lg:col-span-8 flex flex-col gap-10">
+                <section id="home">
+                    <div class="relative flex flex-col group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200 h-[400px]">
+                    <button id="hero-prev"
+                        class="absolute left-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+                        <span class="material-symbols-outlined !text-3xl">chevron_left</span>
+                    </button>
+                    <button id="hero-next"
+                        class="absolute right-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+                        <span class="material-symbols-outlined !text-3xl">chevron_right</span>
+                    </button>
+                    <div id="event-hero" class="flex-1 bg-center bg-no-repeat bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("static/image/OsakaAsiaCup_1.jpeg");'>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl">
+                        </div>
+                    </div>
+                        <div id="hero-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-3"></div>
+                    </div>
+                </section>
+
                 <!-- Overview -->
                 <section>
-                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-4">Event Overview</h2>
+                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-4">Tag Football Asia Cup 2026 Confirmed! International Tournament & Beginner Try-Out Session at J-GREEN Sakai (Sakai City, Osaka)</h2>
                     <p class="text-slate-600 leading-relaxed font-medium mb-4">
                         The host venue for the Tag Football Asia Cup 2026 has been confirmed as J-GREEN Sakai in Sakai City, Osaka, Japan.
                         This event is an international tournament where representative teams from across Asia will compete in fast-paced, highly tactical matches.
@@ -152,7 +148,7 @@
 
                 <!-- Divisions -->
                 <section>
-                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-6">Competition Divisions</h2>
+                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-6">Asia Cup Competition Divisions</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="flex items-center gap-3 p-4 bg-white border border-border-light rounded-xl shadow-sm">
                             <span class="material-symbols-outlined text-primary">man</span>
@@ -179,6 +175,17 @@
                             <span class="font-bold text-slate-900">Mixed Seniors</span>
                         </div>
                     </div>
+
+                    <br>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-4">
+                        With categories ranging from open divisions to age-based divisions, Tag Football is attracting attention as a true “sport for life”—enjoyed by people of all ages and abilities.
+                        Because the game uses tagging instead of tackling, there is minimal contact, making it both safe and competitive.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed font-medium">
+                        The sport is also highly tactical, featuring kicking options such as the grubber kick, which adds variety and excitement to the game.
+                        In Australia—one of the sport’s founding countries—more than 200,000 people play Tag Football, and it is now enjoyed in over 30 countries worldwide.
+                    </p>
+
                     <div class="mt-6 p-6 bg-blue-50 rounded-xl border border-blue-100">
                         <h3 class="text-blue-900 font-bold mb-2 flex items-center gap-2">
                             <span class="material-symbols-outlined">info</span>
@@ -192,19 +199,6 @@
                         </p>
                     </div>
                 </section>
-
-                <!-- What is Tag Football -->
-                <section>
-                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-4">About the Sport</h2>
-                    <p class="text-slate-600 leading-relaxed font-medium mb-4">
-                        With categories ranging from open divisions to age-based divisions, Tag Football is attracting attention as a true “sport for life”—enjoyed by people of all ages and abilities.
-                        Because the game uses tagging instead of tackling, there is minimal contact, making it both safe and competitive.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed font-medium">
-                        The sport is also highly tactical, featuring kicking options such as the grubber kick, which adds variety and excitement to the game.
-                        In Australia—one of the sport’s founding countries—more than 200,000 people play Tag Football, and it is now enjoyed in over 30 countries worldwide.
-                    </p>
-                </section>
             </div>
 
             <!-- Sidebar -->
@@ -213,6 +207,14 @@
                 <div class="bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50 p-6 flex flex-col gap-6 sticky top-24">
                     <h3 class="text-slate-900 text-xl font-black">Event Summary</h3>
                     
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-4">
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Event</p>
+                                <p class="font-bold text-slate-900">Tag Football Asia Cup 2026</p>
+                            </div>
+                        </div>
+
                     <div class="flex flex-col gap-4">
                         <div class="flex gap-4">
                             <div class="bg-primary/10 rounded-xl p-3 h-fit">
@@ -242,7 +244,7 @@
                                 <span class="material-symbols-outlined text-primary">public</span>
                             </div>
                             <div>
-                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Countries</p>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Participating Countries</p>
                                 <p class="font-bold text-slate-900">Japan, Hong Kong</p>
                                 <p class="text-sm text-slate-500 font-medium">More countries may join</p>
                             </div>
@@ -347,6 +349,46 @@
             mobileMenuBtn.querySelector('span').textContent = 'menu';
         });
     });
+
+    const heroImages = [
+        'static/image/OsakaAsiaCup_1.jpeg',
+        'static/image/OsakaAsiaCup_2.jpeg',
+        'static/image/OsakaAsiaCup_3.jpeg',
+        'static/image/OsakaAsiaCup_4.jpeg',
+        'static/image/OsakaAsiaCup_5.jpeg',
+    ];
+    const heroEl = document.getElementById('event-hero');
+    const prevBtn = document.getElementById('hero-prev');
+    const nextBtn = document.getElementById('hero-next');
+    const dotsContainer = document.getElementById('hero-dots');
+    let heroIndex = 0;
+    function renderHero() {
+        heroEl.style.backgroundImage = `url("${heroImages[heroIndex]}")`;
+        const dots = dotsContainer.querySelectorAll('div');
+        dots.forEach((dot, i) => {
+            dot.className = i === heroIndex
+                ? 'w-8 h-2 rounded-full bg-primary transition-all'
+                : 'size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all';
+        });
+    }
+    function initDots() {
+        dotsContainer.innerHTML = '';
+        heroImages.forEach((_, i) => {
+            const d = document.createElement('div');
+            d.addEventListener('click', () => { heroIndex = i; renderHero(); });
+            dotsContainer.appendChild(d);
+        });
+    }
+    prevBtn.addEventListener('click', () => {
+        heroIndex = (heroIndex - 1 + heroImages.length) % heroImages.length;
+        renderHero();
+    });
+    nextBtn.addEventListener('click', () => {
+        heroIndex = (heroIndex + 1) % heroImages.length;
+        renderHero();
+    });
+    initDots();
+    renderHero();
 </script>
 </body>
 </html>
