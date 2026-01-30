@@ -63,7 +63,6 @@
             <nav class="hidden lg:flex items-center gap-8 ml-4">
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#home">Home</a>
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#about">About</a>
-                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#programs">Programs</a>
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#contact">Contact</a>
             </nav>
         </div>
@@ -94,20 +93,19 @@
             <!-- Main Content Area -->
             <div class="lg:col-span-8 flex flex-col gap-10">
                 <section id="home">
-                    <div class="relative flex flex-col group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200 h-[400px]">
-                    <button id="hero-prev"
-                        class="absolute left-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
-                        <span class="material-symbols-outlined !text-3xl">chevron_left</span>
-                    </button>
-                    <button id="hero-next"
-                        class="absolute right-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
-                        <span class="material-symbols-outlined !text-3xl">chevron_right</span>
-                    </button>
-                    <div id="event-hero" class="flex-1 bg-center bg-no-repeat bg-cover transition-transform duration-700 hover:scale-105" style='background-image: url("static/image/OsakaAsiaCup_1.jpeg");'>
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl">
-                        </div>
-                    </div>
+                    <div class="relative group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
+                        <img id="event-hero" src="static/image/OsakaAsiaCup_1.jpeg" class="w-full h-auto transition-transform duration-700 hover:scale-105" alt="Asia Cup 2026">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent pointer-events-none"></div>
+                        
+                        <button id="hero-prev"
+                            class="absolute left-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+                            <span class="material-symbols-outlined !text-3xl">chevron_left</span>
+                        </button>
+                        <button id="hero-next"
+                            class="absolute right-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
+                            <span class="material-symbols-outlined !text-3xl">chevron_right</span>
+                        </button>
+                        
                         <div id="hero-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-3"></div>
                     </div>
                 </section>
@@ -313,7 +311,7 @@
                 <ul class="flex flex-col gap-4 text-slate-400 font-medium">
                     <li class="flex items-center gap-3">
                         <span class="material-symbols-outlined text-primary">mail</span>
-                        <span>hello@hktagrugby.com</span>
+                        <span>info@hktagrugby.com</span>
                     </li>
                     <li class="flex items-center gap-3">
                         <span class="material-symbols-outlined text-primary">location_on</span>
@@ -363,7 +361,7 @@
     const dotsContainer = document.getElementById('hero-dots');
     let heroIndex = 0;
     function renderHero() {
-        heroEl.style.backgroundImage = `url("${heroImages[heroIndex]}")`;
+        heroEl.src = heroImages[heroIndex];
         const dots = dotsContainer.querySelectorAll('div');
         dots.forEach((dot, i) => {
             dot.className = i === heroIndex
