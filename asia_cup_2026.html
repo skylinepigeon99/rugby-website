@@ -54,12 +54,12 @@
     <!-- Header -->
     <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 md:px-10 py-4 bg-white sticky top-0 z-50 shadow-sm">
         <div class="flex items-center gap-8">
-            <div class="flex items-center gap-3 text-primary">
+            <a href="index.html" class="flex items-center gap-3 text-primary hover:opacity-80 transition-opacity shrink-0">
                 <div class="flex items-center justify-center">
                     <img src="static/image/hktagrugbylogo.png" alt="Hong Kong Tag Rugby Logo" class="h-10 w-auto">
                 </div>
-                <h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight">Hong Kong Tag Rugby</h2>
-            </div>
+                <h2 class="text-slate-900 text-xl md:text-2xl font-black leading-tight tracking-tight hidden min-[450px]:block">Hong Kong Tag Rugby</h2>
+            </a>
             <nav class="hidden lg:flex items-center gap-8 ml-4">
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#home">Home</a>
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#about">About</a>
@@ -79,13 +79,21 @@
     </header>
 
     <!-- Mobile Menu (hidden by default) -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-20 px-6">
-        <nav class="flex flex-col gap-6">
-            <a class="text-slate-900 text-lg font-bold" href="index.html#home">Home</a>
-            <a class="text-slate-900 text-lg font-bold" href="index.html#about">About</a>
-            <a class="text-slate-900 text-lg font-bold" href="index.html#programs">Programs</a>
-            <a class="text-slate-900 text-lg font-bold" href="index.html#contact">Contact</a>
-        </nav>
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-8 px-6">
+        <div class="flex flex-col gap-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3 text-primary">
+                    <img src="static/image/hktagrugbylogo.png" alt="Logo" class="h-10 w-auto">
+                    <span class="text-slate-900 text-xl font-black">HK Tag Rugby</span>
+                </div>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a class="text-slate-900 text-lg font-bold" href="index.html#home">Home</a>
+                <a class="text-slate-900 text-lg font-bold" href="index.html#about">About</a>
+                <a class="text-slate-900 text-lg font-bold" href="index.html#programs">Programs</a>
+                <a class="text-slate-900 text-lg font-bold" href="index.html#contact">Contact</a>
+            </nav>
+        </div>
     </div>
 
     <main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">

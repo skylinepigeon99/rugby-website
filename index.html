@@ -54,12 +54,12 @@
     <!-- Header -->
     <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 md:px-10 py-4 bg-white sticky top-0 z-50 shadow-sm">
         <div class="flex items-center gap-8">
-            <div class="flex items-center gap-3 text-primary">
+            <a href="index.html" class="flex items-center gap-3 text-primary hover:opacity-80 transition-opacity shrink-0">
                 <div class="flex items-center justify-center">
                     <img src="static/image/hktagrugbylogo.png" alt="Hong Kong Tag Rugby Logo" class="h-10 w-auto">
                 </div>
-                <h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight">Hong Kong Tag Rugby</h2>
-            </div>
+                <h2 class="text-slate-900 text-xl md:text-2xl font-black leading-tight tracking-tight hidden min-[450px]:block">Hong Kong Tag Rugby</h2>
+            </a>
             <nav class="hidden lg:flex items-center gap-8 ml-4">
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#home">Home</a>
                 <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="#about">About</a>
@@ -79,13 +79,21 @@
     </header>
 
     <!-- Mobile Menu (hidden by default) -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-20 px-6">
-        <nav class="flex flex-col gap-6">
-            <a class="text-slate-900 text-lg font-bold" href="#home">Home</a>
-            <a class="text-slate-900 text-lg font-bold" href="#about">About</a>
-            <a class="text-slate-900 text-lg font-bold" href="#programs">Programs</a>
-            <a class="text-slate-900 text-lg font-bold" href="#contact">Contact</a>
-        </nav>
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-8 px-6">
+        <div class="flex flex-col gap-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3 text-primary">
+                    <img src="static/image/hktagrugbylogo.png" alt="Logo" class="h-10 w-auto">
+                    <span class="text-slate-900 text-xl font-black">HK Tag Rugby</span>
+                </div>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a class="text-slate-900 text-lg font-bold" href="#home">Home</a>
+                <a class="text-slate-900 text-lg font-bold" href="#about">About</a>
+                <a class="text-slate-900 text-lg font-bold" href="#programs">Programs</a>
+                <a class="text-slate-900 text-lg font-bold" href="#contact">Contact</a>
+            </nav>
+        </div>
     </div>
 
     <main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">
@@ -95,15 +103,6 @@
             <div class="relative group overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
                     <img id="event-hero" src="static/image/hero.jpg" class="w-full h-auto transition-transform duration-700 hover:scale-105" alt="Hero Image">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent pointer-events-none"></div>
-                    
-                    <button id="hero-prev"
-                        class="absolute left-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
-                        <span class="material-symbols-outlined !text-3xl">chevron_left</span>
-                    </button>
-                    <button id="hero-next"
-                        class="absolute right-6 top-1/2 -translate-y-1/2 z-30 size-12 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-lg">
-                        <span class="material-symbols-outlined !text-3xl">chevron_right</span>
-                    </button>
                     
                     <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-2xl pointer-events-none">
                         <div class="flex items-center gap-2">
@@ -117,7 +116,6 @@
                             Fun, Fitness & Friends! Join Hong Kong's premier tag rugby community. A competition for everyone—from 5 to 60+ years old!
                         </p>
                     </div>
-                    <div id="hero-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-3"></div>
                 </div>
         </section>
 
@@ -610,53 +608,6 @@
                 mobileMenuBtn.querySelector('span').textContent = 'menu';
             });
         });
-
-        // Hero Carousel
-        const heroImages = [
-            'static/image/hero.jpg',
-            'static/image/OsakaAsiaCup_1.jpeg',
-            'static/image/OsakaAsiaCup_2.jpeg',
-            'static/image/OsakaAsiaCup_3.jpeg',
-            'static/image/OsakaAsiaCup_4.jpeg',
-            'static/image/OsakaAsiaCup_5.jpeg',
-        ];
-        const heroEl = document.getElementById('event-hero');
-        const prevBtn = document.getElementById('hero-prev');
-        const nextBtn = document.getElementById('hero-next');
-        const dotsContainer = document.getElementById('hero-dots');
-        let heroIndex = 0;
-
-        function renderHero() {
-            heroEl.src = heroImages[heroIndex];
-            const dots = dotsContainer.querySelectorAll('div');
-            dots.forEach((dot, i) => {
-                dot.className = i === heroIndex
-                    ? 'w-8 h-2 rounded-full bg-primary transition-all'
-                    : 'size-2 rounded-full bg-slate-300 hover:bg-slate-400 cursor-pointer transition-all';
-            });
-        }
-
-        function initDots() {
-            dotsContainer.innerHTML = '';
-            heroImages.forEach((_, i) => {
-                const d = document.createElement('div');
-                d.addEventListener('click', () => { heroIndex = i; renderHero(); });
-                dotsContainer.appendChild(d);
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            heroIndex = (heroIndex - 1 + heroImages.length) % heroImages.length;
-            renderHero();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            heroIndex = (heroIndex + 1) % heroImages.length;
-            renderHero();
-        });
-
-        initDots();
-        renderHero();
     </script>
 </body>
 </html>
