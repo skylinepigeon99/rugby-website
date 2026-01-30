@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Football Asia Cup 2026 | Hong Kong Tag Rugby</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ea5e9",
+                        "accent": "#f43f5e",
+                        "background-light": "#ffffff",
+                        "surface-light": "#f8fafc",
+                        "border-light": "#e2e8f0",
+                        brand: {
+                            light: '#38bdf8',
+                            DEFAULT: '#0ea5e9',
+                            dark: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Lexend', sans-serif;
+                @apply bg-background-light text-slate-900;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+    <!-- Header -->
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 md:px-10 py-4 bg-white sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3 text-primary">
+                <div class="flex items-center justify-center">
+                    <img src="static/image/hktagrugbylogo.png" alt="Hong Kong Tag Rugby Logo" class="h-10 w-auto">
+                </div>
+                <h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight">Hong Kong Tag Rugby</h2>
+            </div>
+            <nav class="hidden lg:flex items-center gap-8 ml-4">
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#home">Home</a>
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#about">About</a>
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#programs">Programs</a>
+                <a class="text-slate-600 text-sm font-semibold hover:text-primary transition-colors" href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="flex flex-1 justify-end gap-4 md:gap-6 items-center">
+            <button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-full h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                <a href="index.html#contact">Join Now</a>
+            </button>
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-slate-600">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-20 px-6">
+        <nav class="flex flex-col gap-6">
+            <a class="text-slate-900 text-lg font-bold" href="index.html#home">Home</a>
+            <a class="text-slate-900 text-lg font-bold" href="index.html#about">About</a>
+            <a class="text-slate-900 text-lg font-bold" href="index.html#programs">Programs</a>
+            <a class="text-slate-900 text-lg font-bold" href="index.html#contact">Contact</a>
+        </nav>
+    </div>
+
+    <main class="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-8">
+        <!-- Event Hero -->
+        <section class="mb-12">
+            <div class="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200">
+                <div class="w-full bg-center bg-no-repeat aspect-[21/9] bg-cover" style='background-image: url("static/image/hero.jpg");'>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 md:p-14 flex flex-col gap-5 max-w-3xl">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-accent text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">Confirmed</span>
+                            <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">International Tournament</span>
+                        </div>
+                        <h1 class="text-white text-3xl md:text-5xl font-black leading-[1.1] tracking-tight">
+                            Tag Football Asia Cup 2026
+                        </h1>
+                        <p class="text-slate-200 text-lg font-medium leading-relaxed opacity-90">
+                            J-GREEN Sakai (Sakai City, Osaka, Japan) <br>
+                            Saturday 11 April & Sunday 12 April 2026
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Main Content -->
+            <div class="lg:col-span-8 flex flex-col gap-10">
+                <!-- Overview -->
+                <section>
+                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-4">Event Overview</h2>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-4">
+                        The host venue for the Tag Football Asia Cup 2026 has been confirmed as J-GREEN Sakai in Sakai City, Osaka, Japan.
+                        This event is an international tournament where representative teams from across Asia will compete in fast-paced, highly tactical matches.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed font-medium">
+                        In addition, we will run a Beginner Try-Out Session (for kids and adults) so that more people—regardless of experience—can enjoy and experience Tag Football (8-a-side Tag Rugby).
+                    </p>
+                </section>
+
+                <!-- Beginner Session -->
+                <section class="bg-surface-light p-8 rounded-[2rem] border border-border-light">
+                    <div class="flex items-center gap-3 mb-4 text-primary">
+                        <span class="material-symbols-outlined text-3xl">school</span>
+                        <h2 class="text-slate-900 text-2xl font-black tracking-tight">Beginner Try-Out Session</h2>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-4">
+                        For anyone who would like to try Tag Football (8-a-side Tag Rugby) for the first time, we will hold an introductory session covering the basic rules and safe play.
+                        After the introduction, participants will be divided into teams and play a friendly match, making it easy and enjoyable to learn through gameplay.
+                    </p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            <span>Morning of Saturday 11 April</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            <span>Referee clinic led by a Referee Development Coach from Australia</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Divisions -->
+                <section>
+                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-6">Competition Divisions</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-4 bg-white border border-border-light rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary">man</span>
+                            <span class="font-bold text-slate-900">Men’s Open</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-white border border-border-light rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-accent">woman</span>
+                            <span class="font-bold text-slate-900">Women’s Open</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-white border border-border-light rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-purple-500">wc</span>
+                            <span class="font-bold text-slate-900">Mixed Open</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-white border border-border-light rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-slate-500">groups</span>
+                            <span class="font-bold text-slate-900">Men’s Over 30</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-white border border-border-light rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-amber-500">military_tech</span>
+                            <span class="font-bold text-slate-900">Men’s Masters</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-white border border-border-light rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-teal-500">elderly</span>
+                            <span class="font-bold text-slate-900">Mixed Seniors</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-6 bg-blue-50 rounded-xl border border-blue-100">
+                        <h3 class="text-blue-900 font-bold mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined">info</span>
+                            About the Mixed Division
+                        </h3>
+                        <p class="text-blue-800 text-sm font-medium mb-2">
+                            Teams must have at least four female players on the field. To encourage women’s involvement, tries scored by female players receive a +1 bonus point.
+                        </p>
+                        <p class="text-blue-800 text-sm">
+                            Note: Detailed rules will be officially released in the tournament regulations.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- What is Tag Football -->
+                <section>
+                    <h2 class="text-slate-900 text-2xl font-black tracking-tight mb-4">About the Sport</h2>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-4">
+                        With categories ranging from open divisions to age-based divisions, Tag Football is attracting attention as a true “sport for life”—enjoyed by people of all ages and abilities.
+                        Because the game uses tagging instead of tackling, there is minimal contact, making it both safe and competitive.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed font-medium">
+                        The sport is also highly tactical, featuring kicking options such as the grubber kick, which adds variety and excitement to the game.
+                        In Australia—one of the sport’s founding countries—more than 200,000 people play Tag Football, and it is now enjoyed in over 30 countries worldwide.
+                    </p>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-4 flex flex-col gap-6">
+                <!-- Event Summary Card -->
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50 p-6 flex flex-col gap-6 sticky top-24">
+                    <h3 class="text-slate-900 text-xl font-black">Event Summary</h3>
+                    
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-4">
+                            <div class="bg-primary/10 rounded-xl p-3 h-fit">
+                                <span class="material-symbols-outlined text-primary">calendar_month</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Dates</p>
+                                <p class="font-bold text-slate-900">11-12 April 2026</p>
+                                <p class="text-sm text-slate-500 font-medium">Saturday & Sunday</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="bg-primary/10 rounded-xl p-3 h-fit">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Venue</p>
+                                <p class="font-bold text-slate-900">J-GREEN Sakai</p>
+                                <p class="text-sm text-slate-500 font-medium">Sakai City, Osaka, Japan</p>
+                                <p class="text-sm text-slate-500 font-medium">Field: S-14</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="bg-primary/10 rounded-xl p-3 h-fit">
+                                <span class="material-symbols-outlined text-primary">public</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Countries</p>
+                                <p class="font-bold text-slate-900">Japan, Hong Kong</p>
+                                <p class="text-sm text-slate-500 font-medium">More countries may join</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="bg-primary/10 rounded-xl p-3 h-fit">
+                                <span class="material-symbols-outlined text-primary">groups</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Organizers</p>
+                                <ul class="text-sm font-bold text-slate-900 space-y-1">
+                                    <li>Japan Tag Football Association</li>
+                                    <li>Sakai City Rugby Football Union</li>
+                                    <li>International Tag Football Federation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-100 pt-6 mt-2">
+                        <p class="text-slate-600 text-sm font-medium mb-4">
+                            We will share the latest information (schedule, spectator details, etc.) through our website and official social channels.
+                        </p>
+                        <button class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+                            Stay Updated
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-16 px-4 md:px-10 mt-auto">
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2 flex flex-col gap-6">
+                <div class="flex items-center gap-3 text-white">
+                    <div class="flex items-center justify-center">
+                        <img src="static/image/hktagrugbylogo.png" alt="Hong Kong Tag Rugby Logo" class="h-10 w-auto">
+                    </div>
+                    <h2 class="text-2xl font-black leading-tight tracking-tight">Hong Kong Tag Rugby</h2>
+                </div>
+                <p class="text-slate-400 font-medium max-w-md leading-relaxed">
+                    Building a stronger community through Tag Rugby. Inclusive, fun, and competitive sports for everyone in Hong Kong.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="size-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="text-lg font-bold">fb</span>
+                    </a>
+                    <a href="#" class="size-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="text-lg font-bold">ig</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                <ul class="flex flex-col gap-4 text-slate-400 font-medium">
+                    <li><a href="index.html#home" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="index.html#programs" class="hover:text-white transition-colors">Programs</a></li>
+                    <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Contact</h4>
+                <ul class="flex flex-col gap-4 text-slate-400 font-medium">
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <span>hello@hktagrugby.com</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        <span>Hong Kong</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-slate-800 text-center">
+            <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">
+                &copy; 2026 Hong Kong Tag Rugby. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</div> <!-- End layout-container -->
+
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuBtn.querySelector('span');
+        icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.querySelector('span').textContent = 'menu';
+        });
+    });
+</script>
+</body>
+</html>
